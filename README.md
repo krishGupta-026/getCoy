@@ -164,7 +164,7 @@ data/profiles.json       36 seed profiles (server-only)
 public/photos/           36 generated placeholder portraits
 scripts/generate-photos.mjs
 tests/                   vitest suite
-AGENTS.md                the original spec plus build notes for each step
+
 ```
 
 ## Verification
