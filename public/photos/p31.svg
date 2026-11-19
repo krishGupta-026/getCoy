@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+<rect width="600" height="800" fill="#e6dfff"/>
+<rect x="83.5" y="122.5" width="255.3" height="255.3" rx="109.5" fill="#d9ecff" transform="rotate(13.9 211.2 250.2)"/>
+<circle cx="271.5" cy="533.6" r="198.5" fill="#ffdfcf"/>
+<circle cx="297.5" cy="516.7" r="213" fill="#ffe3ee"/>
+<text x="300" y="520" text-anchor="middle" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-size="380" font-weight="900" letter-spacing="-12" fill="#15111e">N</text>
+</svg>

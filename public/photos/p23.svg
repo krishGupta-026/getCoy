@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+<rect width="600" height="800" fill="#d9ecff"/>
+<circle cx="343" cy="305.9" r="172.7" fill="#ffe066"/>
+<circle cx="515.2" cy="593.5" r="156.5" fill="#e6dfff"/>
+<rect x="193.8" y="429.2" width="242.5" height="242.5" rx="105.6" fill="#ffdfcf" transform="rotate(14.7 315 550.4)"/>
+<text x="300" y="520" text-anchor="middle" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-size="380" font-weight="900" letter-spacing="-12" fill="#15111e">K</text>
+</svg>

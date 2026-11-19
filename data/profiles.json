@@ -1,0 +1,536 @@
+[
+  {
+    "id": "p01",
+    "name": "Aarav",
+    "age": 20,
+    "photo": "/photos/p01.svg",
+    "bio": "Debugging at 2 a.m., chai at 2:05.",
+    "location": "IIIT Delhi",
+    "interests": [
+      "Coding",
+      "Chai",
+      "Gaming",
+      "Music"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p02",
+    "name": "Meera",
+    "age": 19,
+    "photo": "/photos/p02.svg",
+    "bio": "Bookshop wanderer. Will lend you a novel, not my pen.",
+    "location": "Delhi University",
+    "interests": [
+      "Books",
+      "Art",
+      "Podcasts"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p03",
+    "name": "Ananya",
+    "age": 21,
+    "photo": "/photos/p03.svg",
+    "bio": "Chai over coffee. Will judge your playlist.",
+    "location": "Delhi University",
+    "interests": [
+      "Music",
+      "Chai",
+      "Photography",
+      "Books"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p04",
+    "name": "Rohan",
+    "age": 22,
+    "photo": "/photos/p04.svg",
+    "bio": "Gym at 6, memes at 6:30. Cricket whenever.",
+    "location": "IIT Delhi",
+    "interests": [
+      "Gym",
+      "Cricket",
+      "Running",
+      "Movies"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p05",
+    "name": "Ishita",
+    "age": 20,
+    "photo": "/photos/p05.svg",
+    "bio": "Dance practice survivor. Ask me about my 400-song playlist.",
+    "location": "NSUT",
+    "interests": [
+      "Dance",
+      "Music",
+      "Travel",
+      "Cooking"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p06",
+    "name": "Kabir",
+    "age": 23,
+    "photo": "/photos/p06.svg",
+    "bio": "Podcasts, long walks, strong opinions about momos.",
+    "location": "JNU",
+    "interests": [
+      "Podcasts",
+      "Books",
+      "Running",
+      "Cooking"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p07",
+    "name": "Saanvi",
+    "age": 18,
+    "photo": "/photos/p07.svg",
+    "bio": "New to college, fluent in sarcasm.",
+    "location": "Amity Noida",
+    "interests": [
+      "Anime",
+      "Art",
+      "Gaming",
+      "Movies"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p08",
+    "name": "Vihaan",
+    "age": 24,
+    "photo": "/photos/p08.svg",
+    "bio": "Weekend trekker, weekday spreadsheet person.",
+    "location": "Gurugram",
+    "interests": [
+      "Travel",
+      "Photography",
+      "Running",
+      "Podcasts"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p09",
+    "name": "Diya",
+    "age": 21,
+    "photo": "/photos/p09.svg",
+    "bio": "Stand-up open mics are my cardio.",
+    "location": "Ashoka University",
+    "interests": [
+      "Stand-up",
+      "Books",
+      "Movies",
+      "Chai"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p10",
+    "name": "Arjun",
+    "age": 19,
+    "photo": "/photos/p10.svg",
+    "bio": "Football first, everything else second.",
+    "location": "Noida",
+    "interests": [
+      "Football",
+      "Gym",
+      "Music"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p11",
+    "name": "Tara",
+    "age": 22,
+    "photo": "/photos/p11.svg",
+    "bio": "Sketchbook in one hand, cutting chai in the other.",
+    "location": "IIIT Delhi",
+    "interests": [
+      "Art",
+      "Chai",
+      "Photography",
+      "Anime"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p12",
+    "name": "Neel",
+    "age": 20,
+    "photo": "/photos/p12.svg",
+    "bio": "Will beat you at FIFA, then lose at ludo.",
+    "location": "Delhi University",
+    "interests": [
+      "Gaming",
+      "Football",
+      "Stand-up",
+      "Music"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p13",
+    "name": "Riya",
+    "age": 23,
+    "photo": "/photos/p13.svg",
+    "bio": "Home cook with a very strong biryani opinion.",
+    "location": "Ghaziabad",
+    "interests": [
+      "Cooking",
+      "Travel",
+      "Dance",
+      "Movies"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p14",
+    "name": "Aditya",
+    "age": 21,
+    "photo": "/photos/p14.svg",
+    "bio": "Building side projects nobody asked for.",
+    "location": "IIT Delhi",
+    "interests": [
+      "Coding",
+      "Gaming",
+      "Podcasts",
+      "Anime"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p15",
+    "name": "Zoya",
+    "age": 19,
+    "photo": "/photos/p15.svg",
+    "bio": "Poetry nights and late-night parathas.",
+    "location": "JNU",
+    "interests": [
+      "Books",
+      "Art",
+      "Chai",
+      "Music"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p16",
+    "name": "Kunal",
+    "age": 25,
+    "photo": "/photos/p16.svg",
+    "bio": "Marathon in progress. Ask me about pacing, not feelings.",
+    "location": "Gurugram",
+    "interests": [
+      "Running",
+      "Gym",
+      "Podcasts"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p17",
+    "name": "Navya",
+    "age": 20,
+    "photo": "/photos/p17.svg",
+    "bio": "Reel editor by night, student by deadline.",
+    "location": "Amity Noida",
+    "interests": [
+      "Photography",
+      "Movies",
+      "Dance",
+      "Music"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p18",
+    "name": "Samar",
+    "age": 22,
+    "photo": "/photos/p18.svg",
+    "bio": "Guitar learner. The neighbours are very patient.",
+    "location": "NSUT",
+    "interests": [
+      "Music",
+      "Coding",
+      "Stand-up",
+      "Chai"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p19",
+    "name": "Pooja",
+    "age": 24,
+    "photo": "/photos/p19.svg",
+    "bio": "Plant mom with a travel problem.",
+    "location": "Delhi University",
+    "interests": [
+      "Travel",
+      "Photography",
+      "Cooking",
+      "Books"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p20",
+    "name": "Dev",
+    "age": 18,
+    "photo": "/photos/p20.svg",
+    "bio": "Fresher energy. Open to recommendations, especially food.",
+    "location": "Noida",
+    "interests": [
+      "Cricket",
+      "Cooking",
+      "Gaming"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p21",
+    "name": "Aisha",
+    "age": 21,
+    "photo": "/photos/p21.svg",
+    "bio": "Debate team survivor. Currently arguing about pineapple on pizza.",
+    "location": "Ashoka University",
+    "interests": [
+      "Books",
+      "Stand-up",
+      "Football",
+      "Travel"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p22",
+    "name": "Harsh",
+    "age": 23,
+    "photo": "/photos/p22.svg",
+    "bio": "Anime marathons and algorithm homework.",
+    "location": "IIIT Delhi",
+    "interests": [
+      "Anime",
+      "Coding",
+      "Gaming",
+      "Movies"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p23",
+    "name": "Kiara",
+    "age": 20,
+    "photo": "/photos/p23.svg",
+    "bio": "Dance reels, chai breaks, repeat.",
+    "location": "Gurugram",
+    "interests": [
+      "Dance",
+      "Chai",
+      "Music"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p24",
+    "name": "Yash",
+    "age": 22,
+    "photo": "/photos/p24.svg",
+    "bio": "Cricket on weekends. Dad jokes all week.",
+    "location": "Ghaziabad",
+    "interests": [
+      "Cricket",
+      "Stand-up",
+      "Movies",
+      "Running"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p25",
+    "name": "Myra",
+    "age": 19,
+    "photo": "/photos/p25.svg",
+    "bio": "Sunsets, street photography, shared fries.",
+    "location": "Delhi University",
+    "interests": [
+      "Photography",
+      "Art",
+      "Travel",
+      "Cooking"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p26",
+    "name": "Ritvik",
+    "age": 25,
+    "photo": "/photos/p26.svg",
+    "bio": "Quiet at first. Then you can't stop me talking about trains.",
+    "location": "IIT Delhi",
+    "interests": [
+      "Travel",
+      "Podcasts",
+      "Books",
+      "Photography"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p27",
+    "name": "Sneha",
+    "age": 21,
+    "photo": "/photos/p27.svg",
+    "bio": "Co-op games only. Betrayal is not a personality.",
+    "location": "NSUT",
+    "interests": [
+      "Gaming",
+      "Chai",
+      "Anime",
+      "Music"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p28",
+    "name": "Ayaan",
+    "age": 20,
+    "photo": "/photos/p28.svg",
+    "bio": "Football in the evening, debates at midnight.",
+    "location": "JNU",
+    "interests": [
+      "Football",
+      "Books",
+      "Podcasts",
+      "Chai"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p29",
+    "name": "Tanvi",
+    "age": 22,
+    "photo": "/photos/p29.svg",
+    "bio": "Bake first, ask questions later.",
+    "location": "Amity Noida",
+    "interests": [
+      "Cooking",
+      "Movies",
+      "Art",
+      "Dance"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p30",
+    "name": "Manav",
+    "age": 24,
+    "photo": "/photos/p30.svg",
+    "bio": "Gym regular with a soft spot for rom-coms.",
+    "location": "Gurugram",
+    "interests": [
+      "Gym",
+      "Movies",
+      "Music",
+      "Cooking"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p31",
+    "name": "Nisha",
+    "age": 23,
+    "photo": "/photos/p31.svg",
+    "bio": "Researching things I'll never need. Happily.",
+    "location": "Ashoka University",
+    "interests": [
+      "Books",
+      "Podcasts",
+      "Art",
+      "Stand-up"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p32",
+    "name": "Karan",
+    "age": 19,
+    "photo": "/photos/p32.svg",
+    "bio": "Chai, cricket and mild overconfidence at carrom.",
+    "location": "Noida",
+    "interests": [
+      "Gaming",
+      "Chai",
+      "Cricket",
+      "Coding"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p33",
+    "name": "Anika",
+    "age": 20,
+    "photo": "/photos/p33.svg",
+    "bio": "Runs 5k, then earns the pani puri.",
+    "location": "IIIT Delhi",
+    "interests": [
+      "Running",
+      "Cooking",
+      "Travel",
+      "Music"
+    ],
+    "likedMe": true
+  },
+  {
+    "id": "p34",
+    "name": "Veer",
+    "age": 21,
+    "photo": "/photos/p34.svg",
+    "bio": "Photographer by hobby, snack thief by nature.",
+    "location": "Delhi University",
+    "interests": [
+      "Photography",
+      "Travel",
+      "Football"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p35",
+    "name": "Ira",
+    "age": 18,
+    "photo": "/photos/p35.svg",
+    "bio": "First year, many playlists, zero regrets.",
+    "location": "Ghaziabad",
+    "interests": [
+      "Music",
+      "Dance",
+      "Anime",
+      "Movies"
+    ],
+    "likedMe": false
+  },
+  {
+    "id": "p36",
+    "name": "Rudra",
+    "age": 25,
+    "photo": "/photos/p36.svg",
+    "bio": "Weekend DJ, weekday analyst.",
+    "location": "Gurugram",
+    "interests": [
+      "Music",
+      "Podcasts",
+      "Travel",
+      "Gym"
+    ],
+    "likedMe": true
+  }
+]

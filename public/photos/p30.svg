@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+<rect width="600" height="800" fill="#ffe3ee"/>
+<rect x="214.4" y="215.2" width="346.5" height="346.5" rx="70.4" fill="#d9ecff" transform="rotate(-7.1 387.6 388.4)"/>
+<circle cx="266.7" cy="221.7" r="208.5" fill="#e6dfff"/>
+<circle cx="70.6" cy="543.5" r="224.3" fill="#ffe066"/>
+<text x="300" y="520" text-anchor="middle" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-size="380" font-weight="900" letter-spacing="-12" fill="#15111e">M</text>
+</svg>

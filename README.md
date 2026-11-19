@@ -4,7 +4,7 @@ A swipe-based **Discover** tab (Tinder/Bumble style) for a mock of Coy, an anony
 Core promise: **never reveal who has liked you unless it is mutual.**
 
 > Work in progress. See `AGENTS.md` for the full spec and implementation order.
-> Status: step 1 done (scaffold, design tokens, font, test setup).
+> Status: steps 1-3 done (scaffold, design tokens, app shell, seed data and placeholder photos).
 
 ## Run it
 
@@ -14,6 +14,7 @@ npm run dev     # open the printed URL
 npm test        # vitest
 npm run build
 npm run lint
+npm run photos # regenerate public/photos/*.svg from data/profiles.json
 ```
 
 Requires Node 20+. The Bricolage Grotesque font is fetched from Google Fonts at build/dev time, so the first

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+<rect width="600" height="800" fill="#e6dfff"/>
+<rect x="-14.7" y="14.3" width="321.3" height="321.3" rx="79.5" fill="#ffdfcf" transform="rotate(7.2 145.9 175)"/>
+<ellipse cx="183.6" cy="195" rx="248.1" ry="114.2" fill="#d9ecff" transform="rotate(23.5 183.6 195)"/>
+<rect x="133.8" y="126.4" width="250.1" height="250.1" rx="83.5" fill="#c9f3de" transform="rotate(13.3 258.9 251.4)"/>
+<text x="300" y="520" text-anchor="middle" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-size="380" font-weight="900" letter-spacing="-12" fill="#15111e">M</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
+<rect width="600" height="800" fill="#c9f3de"/>
+<circle cx="261.4" cy="180.7" r="179.6" fill="#ffdfcf"/>
+<rect x="140.1" y="280.2" width="309.2" height="309.2" rx="93.6" fill="#e6dfff" transform="rotate(11.9 294.7 434.8)"/>
+<ellipse cx="519" cy="459" rx="226.4" ry="182.7" fill="#ffe3ee" transform="rotate(-28.3 519 459)"/>
+<text x="300" y="520" text-anchor="middle" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-size="380" font-weight="900" letter-spacing="-12" fill="#15111e">R</text>
+</svg>

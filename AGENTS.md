@@ -449,6 +449,8 @@ State in the README that seeded `likedMe` values exist only as server-side mock 
 ## 14. Build notes (added during implementation)
 
 - **Step 1:** the generator enabled `cacheComponents` and `partialPrefetching` in `next.config.ts`; both are turned off because `export const dynamic = "force-dynamic"` (section 6) is not allowed with Cache Components. `@types/node` is `^22` because `vitest` 5 requires it. Buttons combine `neo-btn neo-press` (and `neo-circle neo-press` for the action buttons) so the pressed-flat behaviour lives in one place.
+- **Step 2:** the shell is one `100dvh` column (`app/(app)/layout.tsx`) with header, scrolling `<main>` and the tab bar as flex children, instead of a `position: fixed` bar. The result is the same (bar pinned to the bottom of the 480px column, safe-area padding included) and the page itself never scrolls. Tabs are equal-width links; the active one shows a content-sized pink pill.
+- **Step 3:** `likedMe` is true for p03, p05, p09, p12, p14, p18, p21, p25, p27, p30, p33 and p36 (irregular on purpose, at least one in each quarter of the file). That is only the seed order; the feed order is a separate seeded shuffle of ids (step 4). `tests/seed.test.ts` checks the seed shape and that every photo exists. `npm run photos` regenerates the SVGs deterministically.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
