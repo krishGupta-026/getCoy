@@ -1,0 +1,344 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens (AGENTS.md section 3.1 / 3.3)                          */
+/* ------------------------------------------------------------------ */
+:root {
+  --ink: #15111e; /* text, 2px borders, hard shadows */
+  --paper: #ffffff; /* page background */
+  --pink: #ff3d81; /* primary buttons, brand dot, "like" */
+  --pink-deep: #d6175a; /* pink text: links, LIKE stamp */
+  --pink-soft: #ffe3ee; /* selected fill, soft pink icon buttons */
+  --lavender: #e6dfff; /* hero card fill */
+  --surface: #f4f1fa; /* list rows, icon buttons, chips, segmented track */
+  --mint: #c9f3de; /* highlight card fill */
+  --yellow: #ffe066; /* avatar fill, badge, toast */
+  --peach: #ffdfcf; /* avatar fill */
+  --sky: #d9ecff; /* icon tile fill */
+  --muted: #6b6878; /* secondary text */
+  --dash: #c9c4da; /* dashed outlines */
+  --scrim: rgba(21, 17, 30, 0.5); /* modal backdrop */
+
+  /* Hard offset shadows: bottom-right, never blurred. */
+  --shadow-lg: 6px 6px 0 var(--ink); /* big cards */
+  --shadow-md: 4px 4px 0 var(--ink); /* buttons */
+  --shadow-sm: 3px 3px 0 var(--ink); /* small pills */
+
+  --radius-card: 28px;
+  --radius-row: 20px;
+  --radius-slot: 24px;
+
+  --tabbar-h: 68px;
+  --header-h: 64px;
+}
+
+/* Expose the tokens as Tailwind utilities: bg-pink, text-ink, border-ink... */
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-pink: var(--pink);
+  --color-pink-deep: var(--pink-deep);
+  --color-pink-soft: var(--pink-soft);
+  --color-lavender: var(--lavender);
+  --color-surface: var(--surface);
+  --color-mint: var(--mint);
+  --color-yellow: var(--yellow);
+  --color-peach: var(--peach);
+  --color-sky: var(--sky);
+  --color-muted: var(--muted);
+  --color-dash: var(--dash);
+  --font-sans: var(--font-bricolage), system-ui, sans-serif;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                 */
+/* ------------------------------------------------------------------ */
+html {
+  height: 100%;
+  background: var(--paper); /* page background is always white */
+  color-scheme: light;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-bricolage), system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--pink-deep);
+  outline-offset: 3px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------ */
+/* Component recipes (AGENTS.md section 3.4)                            */
+/* ------------------------------------------------------------------ */
+@layer components {
+  /* Centered mobile column: max 480px, 20px gutters. */
+  .neo-column {
+    width: 100%;
+    max-width: 480px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  /* Shared "bordered thing you can press": 2px ink border, hard shadow,
+     pressing translates 3px,3px and drops the shadow. */
+  .neo-press {
+    border: 2px solid var(--ink);
+    box-shadow: var(--shadow-md);
+    transition:
+      transform 100ms ease,
+      box-shadow 100ms ease;
+  }
+  .neo-press:active:not(:disabled) {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 var(--ink);
+  }
+  .neo-press:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Primary button (pink, ink text). Combine with .neo-press. */
+  .neo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 52px;
+    padding-inline: 24px;
+    border-radius: 999px;
+    background: var(--pink);
+    color: var(--ink);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .neo-btn--block {
+    display: flex;
+    width: 100%;
+  }
+  /* Secondary button: same, paper fill */
+  .neo-btn--secondary {
+    background: var(--paper);
+  }
+
+  /* Circular action buttons under the deck (Pass 64px / Like 72px). Combine with .neo-press. */
+  .neo-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--paper);
+    color: var(--ink);
+  }
+  .neo-circle--pass {
+    width: 64px;
+    height: 64px;
+  }
+  .neo-circle--like {
+    width: 72px;
+    height: 72px;
+    background: var(--pink);
+  }
+
+  /* Icon button: 44px surface circle, no border */
+  .neo-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--ink);
+  }
+  .neo-icon-btn--soft {
+    background: var(--pink-soft);
+  }
+
+  /* Text links */
+  .neo-link {
+    color: var(--pink-deep);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+  .neo-link--muted {
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* Cards */
+  .neo-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-lg);
+  }
+  .neo-hero {
+    padding: 24px;
+    background: var(--lavender);
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-lg);
+  }
+  .neo-hero--mint {
+    background: var(--mint);
+  }
+
+  /* List row (e.g. a match) */
+  .neo-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--surface);
+    border-radius: var(--radius-row);
+  }
+  .neo-avatar {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden;
+    font-size: 22px;
+    font-weight: 800;
+    background: var(--yellow);
+  }
+
+  /* Count chip ("3", "2/3") */
+  .neo-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  /* Interest chips on profile cards */
+  .neo-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* Modal sheet + backdrop */
+  .neo-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: var(--scrim);
+  }
+  .neo-modal {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    padding: 24px;
+    background: var(--paper);
+    border-radius: var(--radius-card);
+  }
+
+  /* Tag / badge, slightly rotated */
+  .neo-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    background: var(--yellow);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
+  }
+  .neo-badge--pink {
+    background: var(--pink);
+  }
+
+  /* Dashed empty slot */
+  .neo-slot {
+    padding: 24px;
+    border: 2px dashed var(--dash);
+    border-radius: var(--radius-slot);
+    background: transparent;
+  }
+
+  /* Skeleton pulse */
+  .neo-skeleton {
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    animation: neo-pulse 1.4s ease-in-out infinite;
+  }
+
+  /* Typography helpers */
+  .neo-hero-title {
+    font-size: clamp(32px, 9vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .neo-section-title {
+    font-size: 20px;
+    font-weight: 800;
+  }
+  .neo-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .neo-helper {
+    font-size: 13px;
+    color: var(--muted);
+  }
+}
+
+@keyframes neo-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+/* Reduced motion: no pulsing, no pressed-button movement animation. */
+@media (prefers-reduced-motion: reduce) {
+  .neo-skeleton {
+    animation: none;
+  }
+  .neo-press {
+    transition: none;
+  }
+}
