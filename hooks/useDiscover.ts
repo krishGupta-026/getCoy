@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useReducer, useRef } from "react";
 import { ApiRequestError, fetchFeed, fetchMatches, postSwipe } from "@/lib/api-client";
+import { DEMO_RESET_EVENT } from "@/lib/demo-reset";
 import type { MatchEntry, Profile, SwipeDirection } from "@/lib/types";
 
 /** Profiles requested per feed call. */
@@ -11,6 +12,7 @@ export const PREFETCH_AT = 3;
 
 export const SWIPE_FAILED_MESSAGE = "Couldn't save that swipe. Try again.";
 export const PROFILE_GONE_MESSAGE = "That profile isn't available anymore.";
+export const DEMO_RESET_MESSAGE = "Demo data reset.";
 
 // ---------------------------------------------------------------------------
 // State (pure reducer, unit-tested in tests/discover-reducer.test.ts)
@@ -230,6 +232,16 @@ export function useDiscover() {
     feedInFlight.current = false;
     dispatch({ type: "reset" });
   }, []);
+
+  // "Reset demo data" (settings modal): start over from the server's fresh state.
+  useEffect(() => {
+    const onDemoReset = () => {
+      reload();
+      dispatch({ type: "toast", message: DEMO_RESET_MESSAGE });
+    };
+    window.addEventListener(DEMO_RESET_EVENT, onDemoReset);
+    return () => window.removeEventListener(DEMO_RESET_EVENT, onDemoReset);
+  }, [reload]);
 
   const retry = useCallback(() => dispatch({ type: "retry" }), []);
   const dismissMatch = useCallback(() => dispatch({ type: "matchDismissed" }), []);

@@ -125,14 +125,14 @@ function DeckCard({ profile, index, reduceMotion, onCommit, ref }: DeckCardProps
       }}
       initial={false}
       animate={{ scale: 1 - index * 0.05, y: index * 10 }}
-      transition={{ type: "spring", stiffness: 320, damping: 26 }}
+      transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 320, damping: 26 }}
       drag={isTop && !leaving ? "x" : false}
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.7}
       dragSnapToOrigin
       onDragEnd={handleDragEnd}
     >
-      <ProfileCard profile={profile} priority={isTop} flat={!isTop}>
+      <ProfileCard profile={profile} flat={!isTop}>
         {isTop && (
           <>
             <motion.div

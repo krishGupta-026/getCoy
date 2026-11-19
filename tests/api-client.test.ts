@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { ApiRequestError, fetchFeed, fetchMatches, postSwipe } from "@/lib/api-client";
+import { ApiRequestError, fetchFeed, fetchMatches, postSwipe, resetDemo } from "@/lib/api-client";
 
 afterEach(() => vi.unstubAllGlobals());
 
@@ -32,6 +32,20 @@ describe("api-client", () => {
     const fetchMock = stubFetch(async () => jsonResponse({ matches: [] }));
     expect(await fetchMatches()).toEqual({ matches: [] });
     expect(fetchMock.mock.calls[0][0]).toBe("/api/matches");
+  });
+
+  it("resetDemo POSTs to /api/reset and resolves on success", async () => {
+    const fetchMock = stubFetch(async () => jsonResponse({ ok: true }));
+    await expect(resetDemo()).resolves.toBeUndefined();
+    expect(fetchMock.mock.calls[0][0]).toBe("/api/reset");
+    expect(fetchMock.mock.calls[0][1]?.method).toBe("POST");
+  });
+
+  it("resetDemo surfaces a 403 (reset disabled) as an ApiRequestError", async () => {
+    stubFetch(async () => jsonResponse({ error: "reset_disabled" }, 403));
+    const error = await resetDemo().catch((e: unknown) => e);
+    expect(error).toBeInstanceOf(ApiRequestError);
+    expect((error as ApiRequestError).status).toBe(403);
   });
 
   it("throws ApiRequestError with the HTTP status for error responses", async () => {

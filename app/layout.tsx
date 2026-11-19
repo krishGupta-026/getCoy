@@ -11,7 +11,7 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Coy · Discover",
+  title: { default: "Coy", template: "%s · Coy" },
   description: "Swipe, match, and only find out when it's mutual.",
 };
 

@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import CardSkeleton from "@/components/discover/CardSkeleton";
 import DiscoverView from "@/components/discover/DiscoverView";
+
+export const metadata: Metadata = { title: "Discover" };
 
 /**
  * DiscoverView reads ?view= with useSearchParams, which needs a Suspense

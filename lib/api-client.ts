@@ -46,3 +46,8 @@ export function postSwipe(profileId: string, direction: SwipeDirection): Promise
 export function fetchMatches(): Promise<MatchesResponse> {
   return request<MatchesResponse>("/api/matches");
 }
+
+/** Demo helper: clears all swipes and matches. 403 when resetting is disabled. */
+export async function resetDemo(): Promise<void> {
+  await request<{ ok: true }>("/api/reset", { method: "POST" });
+}

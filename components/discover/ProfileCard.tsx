@@ -9,8 +9,6 @@ type Props = {
   profile: Profile;
   /** Overlays (LIKE / PASS stamps, drag tint) rendered on top of the card. */
   children?: React.ReactNode;
-  /** Load the photo eagerly (true for the card on top of the deck). */
-  priority?: boolean;
   /** Drop the hard shadow (cards stacked behind the top one show only their edge). */
   flat?: boolean;
 };
@@ -20,26 +18,26 @@ type Props = {
  * Photo on top (it shrinks first when space is short), then name and age,
  * location, bio and interest chips. Purely presentational: no gestures here.
  */
-export default function ProfileCard({ profile, children, priority = false, flat = false }: Props) {
+export default function ProfileCard({ profile, children, flat = false }: Props) {
   return (
     <article
       className={`neo-card relative flex h-full flex-col overflow-hidden p-1 select-none ${flat ? "shadow-none" : ""}`}
     >
-      <div className="relative min-h-[88px] flex-[1_1_60%] overflow-hidden rounded-[22px] bg-surface">
+      <div className="relative min-h-[64px] flex-[1_1_60%] overflow-hidden rounded-[22px] bg-surface">
         <Image
           src={profile.photo}
           alt=""
           fill
           sizes="480px"
           unoptimized
-          priority={priority}
+          loading="eager" /* only 3 small cards are ever rendered, and a promoted card must not flash empty */
           draggable={false}
           className="pointer-events-none object-cover object-[50%_40%]"
         />
       </div>
 
       <div className="flex-none px-3 pt-3 pb-2">
-        <h2 className="text-[26px] leading-[1.1] font-extrabold tracking-[-0.02em]">
+        <h2 className="truncate text-[26px] leading-[1.1] font-extrabold tracking-[-0.02em]">
           {profile.name}, {profile.age}
         </h2>
         <p className="mt-1 flex items-center gap-1 text-sm text-muted">
@@ -47,7 +45,7 @@ export default function ProfileCard({ profile, children, priority = false, flat 
           {profile.location}
         </p>
         <p className="mt-2 line-clamp-2 text-base leading-[1.3] text-ink">{profile.bio}</p>
-        <ul className="mt-2 flex max-h-[62px] flex-wrap gap-1.5 overflow-hidden">
+        <ul className="mt-2 flex flex-wrap gap-1.5">
           {profile.interests.map((interest, i) => (
             <li key={interest} className={`neo-tag ${CHIP_FILLS[i % CHIP_FILLS.length]}`}>
               {interest}

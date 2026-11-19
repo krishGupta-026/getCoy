@@ -32,7 +32,7 @@ export default function MatchesList({ matches }: Props) {
         </div>
       ) : (
         <ul className="flex flex-col gap-3">
-          {matches.map(({ profile }) => (
+          {matches.map(({ profile }, index) => (
             <li key={profile.id} className="neo-row">
               <span className="neo-avatar relative border-2 border-ink bg-surface">
                 <Image
@@ -41,6 +41,7 @@ export default function MatchesList({ matches }: Props) {
                   fill
                   sizes="56px"
                   unoptimized
+                  loading={index < 6 ? "eager" : "lazy"}
                   className="object-cover"
                 />
               </span>

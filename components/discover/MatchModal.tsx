@@ -73,7 +73,15 @@ export default function MatchModal({ match, onKeepSwiping, onViewMatches }: Prop
           <div className="mt-5 flex items-center justify-center" aria-hidden="true">
             <span className="neo-avatar !size-[88px] border-2 border-ink text-4xl">Y</span>
             <span className="neo-avatar relative -ml-5 !size-[88px] border-2 border-ink bg-surface">
-              <Image src={shown.photo} alt="" fill sizes="88px" unoptimized className="object-cover" />
+              <Image
+                src={shown.photo}
+                alt=""
+                fill
+                sizes="88px"
+                unoptimized
+                loading="eager"
+                className="object-cover"
+              />
             </span>
           </div>
 

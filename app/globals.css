@@ -55,6 +55,7 @@
 /* ------------------------------------------------------------------ */
 html {
   height: 100%;
+  overscroll-behavior: none; /* no pull-to-refresh / rubber-banding while swiping */
   background: var(--paper); /* page background is always white */
   color-scheme: light;
 }
@@ -78,6 +79,10 @@ body {
 /* In the base layer on purpose: unlayered CSS beats every layer, which would
    silently override .neo-btn / .neo-link and Tailwind utilities on <button>s. */
 @layer base {
+  button,
+  a {
+    touch-action: manipulation; /* no double-tap-zoom delay on controls */
+  }
   button {
     font: inherit;
     color: inherit;
