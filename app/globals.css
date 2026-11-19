@@ -75,10 +75,14 @@ body {
   outline-offset: 3px;
 }
 
-button {
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
+/* In the base layer on purpose: unlayered CSS beats every layer, which would
+   silently override .neo-btn / .neo-link and Tailwind utilities on <button>s. */
+@layer base {
+  button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -264,7 +268,20 @@ button {
     max-width: 440px;
     padding: 24px;
     background: var(--paper);
+    border: 2px solid var(--ink);
     border-radius: var(--radius-card);
+    box-shadow: var(--shadow-lg);
+  }
+  .neo-modal--lavender {
+    background: var(--lavender);
+  }
+
+  /* A few static confetti dots that pop in around the match screen */
+  .neo-confetti {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: neo-pop 420ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
   }
 
   /* Tag / badge, slightly rotated */
@@ -297,6 +314,27 @@ button {
     background: var(--surface);
     border-radius: var(--radius-card);
     animation: neo-pulse 1.4s ease-in-out infinite;
+  }
+
+  /* Toast: small ink-bordered pill, top of the screen */
+  .neo-toast {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
+    left: 50%;
+    z-index: 60;
+    width: max-content;
+    max-width: calc(100vw - 40px);
+    padding: 10px 18px;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    background: var(--yellow);
+    box-shadow: var(--shadow-sm);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    transform: translateX(-50%);
+    animation: neo-toast-in 160ms ease-out;
   }
 
   /* Typography helpers */
@@ -333,9 +371,33 @@ button {
   }
 }
 
-/* Reduced motion: no pulsing, no pressed-button movement animation. */
+@keyframes neo-pop {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes neo-toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Reduced motion: no pulsing, no toast slide, no pressed-button movement animation. */
 @media (prefers-reduced-motion: reduce) {
-  .neo-skeleton {
+  .neo-skeleton,
+  .neo-toast,
+  .neo-confetti {
     animation: none;
   }
   .neo-press {

@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 import { useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
 import type { Profile, SwipeDirection } from "@/lib/types";
+import DeckFrame from "./DeckFrame";
 import ProfileCard from "./ProfileCard";
 
 /** Imperative API so buttons and arrow keys can trigger the same fly-out as a swipe. */
@@ -180,20 +181,17 @@ export default function SwipeDeck({ profiles, onSwipe, ref }: Props) {
   );
 
   return (
-    <div className="relative min-h-0 flex-1" role="group" aria-label="Profiles to swipe">
-      {/* Room on the right for the 6px hard shadow, and at the bottom for the stack. */}
-      <div className="absolute top-0 right-[6px] bottom-[26px] left-0">
-        {profiles.slice(0, VISIBLE_CARDS).map((profile, index) => (
-          <DeckCard
-            key={profile.id}
-            profile={profile}
-            index={index}
-            reduceMotion={reduceMotion}
-            onCommit={onSwipe}
-            ref={index === 0 ? topCard : undefined}
-          />
-        ))}
-      </div>
-    </div>
+    <DeckFrame role="group" aria-label="Profiles to swipe">
+      {profiles.slice(0, VISIBLE_CARDS).map((profile, index) => (
+        <DeckCard
+          key={profile.id}
+          profile={profile}
+          index={index}
+          reduceMotion={reduceMotion}
+          onCommit={onSwipe}
+          ref={index === 0 ? topCard : undefined}
+        />
+      ))}
+    </DeckFrame>
   );
 }
