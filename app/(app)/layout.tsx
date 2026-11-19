@@ -11,7 +11,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="mx-auto flex h-dvh w-full max-w-[480px] flex-col">
       <Header />
-      <main className="min-h-0 flex-1 overflow-y-auto px-5">{children}</main>
+      <main className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto px-5">{children}</main>
       <TabBar />
     </div>
   );

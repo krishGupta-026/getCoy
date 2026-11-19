@@ -4,7 +4,7 @@ A swipe-based **Discover** tab (Tinder/Bumble style) for a mock of Coy, an anony
 Core promise: **never reveal who has liked you unless it is mutual.**
 
 > Work in progress. See `AGENTS.md` for the full spec and implementation order.
-> Status: steps 1-3 done (scaffold, design tokens, app shell, seed data and placeholder photos).
+> Status: steps 1-5 done (scaffold, design tokens, app shell, seed data and photos, backend API with tests, swipe deck UI).
 
 ## Run it
 
